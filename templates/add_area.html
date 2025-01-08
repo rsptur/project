@@ -1,0 +1,18 @@
+<hr>
+<ul>
+<h1>Rajatut keskustelualueet</h1>
+{% for topic in topics %}
+<li><a href="/area/{{ topic[0] }}">{{ topic[1] }}</a>
+{% endfor %}
+</ul>
+<h2>Lisää uusi alue</h2>
+<form action="/add_area" method="POST">
+<p>Uusi alue:<br>
+<input type="text" name="area"></p>
+<input type="submit" value="Lähetä">
+</form>
+<p>Etsi viesteistä:<a
+href="/search">Etsi viesteistä</a> | <a href="/logout">Kirjaudu ulos</a>
+</p>
+</ul>
+<a href="/">Takaisin</a>

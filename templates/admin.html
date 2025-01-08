@@ -1,0 +1,20 @@
+<title>Viestit</title>
+<h1>Viestit</h1>
+{% for topic in topics %}
+<br>Numero: {{topic[0]}}. Viesti:{{topic[1]}}  
+{% endfor %}
+</ul>
+<h2>Syötä viestin numero jonka haluat poistaa</h2>
+<form action="/admin" method="POST">
+<input type="integer" name="number">
+<br>
+<input type="submit" value="Syötä numero">
+<input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+</form>
+<a href="/delete_topics">Poista aihe</a>
+</p>
+<a href="/add_area">Lisää rajattu alue</a>
+</p>
+<a href="/">Takaisin</a>
+</p>
+<a href="/logout">Kirjaudu ulos</a>

@@ -1,0 +1,11 @@
+<title>Uusi aihe</title>
+<form action="/add_topic" method="POST">
+    Anna viestin aihe:
+    <input type="text" name="topic">
+    <br>
+    Kirjoita viesti:
+    <input type="text" name="message">
+    <br>
+    <input type="submit" value="Lähetä">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+    </form>

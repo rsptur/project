@@ -1,0 +1,27 @@
+<h1>Alue:{{headline}}</h1>
+<ul>
+{% for topic in topics %}
+<p>{{topic[0]}}<p>
+{% endfor %}
+<title>Uusi viesti</title>
+<form action="/add_smessage" method="POST">
+    Lisää viesti alueelle: 
+    <input type="text" name="smessage">
+    <br>
+    <input type="submit" value="Lähetä">
+    <input type="hidden" name="area" value="{{headline}}">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+    </form>
+    <title>Uusi käyttäjä alueelle</title>
+<form action="/add_vip" method="POST">
+        Lisää käyttäjä alueelle. Anna id:
+        <input type="text" name="user_id">
+        <br>
+        <input type="submit" value="Lähetä">
+        <input type="hidden" name="area" value="{{headline}}">
+        <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+        </form>
+<a href="/logout">Kirjaudu ulos</a>
+</p>
+<a href="/">Takaisin</a>
+</ul>
