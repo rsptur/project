@@ -43,7 +43,8 @@ def new():
         elif len(password)>100: 
             return render_template("error.html", message="Salasana on liian pitkä")       
         if users.new_user(username,password): 
-            return redirect("/")
+            return "Käyttäjä"+username+"on lisätty"
+            #return redirect("/")
         else: 
             return render_template("error.html", message="Käyttäjätunnus on jo käytössä tai sitä ei voitu luoda")
 
