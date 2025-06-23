@@ -19,7 +19,7 @@ def new_user(username,password):
     try: 
         admin=False
         sql = text("INSERT INTO users (username, password,admin) VALUES (:username, :password, :admin)")
-        db.session.execute(sql, {"username":username, "password":hash_value, "admin":admin})
+        db.session.execute(sql, {"username":username, "password":password, "admin":admin})
         db.session.commit()    
     except: 
         return False
