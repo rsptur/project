@@ -125,9 +125,9 @@ def change_name():
         user_id=session["user_id"] 
         username= request.form["username"]
         if users.change_username(username, user_id): 
-            return redirect("/")
+            return render_template("error.html", message="Käyttäjänimi vaihdettu")            
         else: 
-            return render_template("error.html", message="Käyttäjänimi vaihdettu")
+            return render_template("error.html", message="Käyttäjänimea ei voitu vaihtaa")
 
 @app.route("/add_admin",methods=["GET","POST"])
 def register_admin(): 
