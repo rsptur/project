@@ -23,7 +23,7 @@ def login():
         user_id=users.get_user_id(username)
         session["user_id"] = user_id
         session["username"] = username
-        return "Käyttäjä"+username+"on lisätty"
+        return redirect("/")
     else: 
         render_template("error.html", message="Väärä salasana tai et ole vielä rekisteröitynyt")
 
