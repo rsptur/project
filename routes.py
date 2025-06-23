@@ -127,7 +127,7 @@ def change_name():
         if users.change_username(username, user_id): 
             return redirect("/")
         else: 
-            return render_template("error.html", message="Ylläpitäjää ei voitu lisätä")
+            return render_template("error.html", message="Käyttäjänimi vaihdettu")
 
 @app.route("/add_admin",methods=["GET","POST"])
 def register_admin(): 
